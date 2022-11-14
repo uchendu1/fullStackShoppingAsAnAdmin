@@ -3,27 +3,38 @@ import { useDispatch } from "react-redux";
 import { login } from "../../redux/apiCalls";
 
 const Login = () => {
+  const [userName, setUsername] = useState("");
+  const [password, setpassword] = useState("");
+  const dispatch = useDispatch();
+  
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { userName, password });
   };
-  const [userName, setUsername] = useState("");
-  const [password, setpassword] = useState("");
-  const dispatch = useDispatch();
+  return ( 
+    <div style={{
+      height: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      flex: "2"
+    }}>
 
-  return (
-    <div>
+
       <input
+      style={{padding: 10, marginBottom: 20}}
         type="text"
         onChange={(e) => setUsername(e.target.value)}
         placeholder="userName"
       />
-      <input
-        type="text"
+      <input 
+      style={{padding: 10, marginBottom: 20}}
+        type="password"
         onChange={(e) => setpassword(e.target.value)}
         placeholder="password"
       />
-      <button onClick={handleClick}>Login</button>
+      <button onClick={handleClick} style={{padding: 10, width: 100}}>Login</button>
     </div>
   );
 };

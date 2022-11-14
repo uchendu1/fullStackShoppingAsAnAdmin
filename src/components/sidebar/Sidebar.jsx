@@ -15,7 +15,7 @@ import {
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
-export default function Sidebar() {
+export default function Sidebar({props}) {
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">

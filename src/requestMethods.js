@@ -12,13 +12,13 @@ const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).
 
 // console.log(JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.accessToken)
 
-
+console.log(TOKEN, "TOKEN.........")
 export const publicRequest = axios.create({
     baseUrl: BASE_URL,
-})
+});
 
 
 export const userRequest = axios.create({
     baseUrl: BASE_URL,
-    header: {token: `Bearer ${TOKEN}`},
-})
+    headers: {token: `Bearer ${TOKEN}`},
+});

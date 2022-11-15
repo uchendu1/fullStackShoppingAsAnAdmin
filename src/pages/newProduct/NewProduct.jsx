@@ -1,7 +1,11 @@
 import "./newProduct.css";
+import Layout from "../../components/layout";
+
 
 export default function NewProduct() {
   return (
+    <Layout>
+
     <div className="newProduct">
       <h1 className="addProductTitle">New Product</h1>
       <form className="addProductForm">
@@ -27,5 +31,7 @@ export default function NewProduct() {
         <button className="addProductButton">Create</button>
       </form>
     </div>
+    </Layout>
+
   );
 }

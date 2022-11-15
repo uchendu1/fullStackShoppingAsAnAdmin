@@ -1,7 +1,7 @@
 
 import "./App.css";
 import Home from "./pages/home/Home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import UserList from "./pages/userList/UserList";
 import User from "./pages/user/User";
 import NewUser from "./pages/newUser/NewUser";
@@ -11,6 +11,7 @@ import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "./pages/Login/Login";
 
 function App() {
+const admin =  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin;
 
 
   return (
@@ -19,6 +20,7 @@ function App() {
        <div className="container"> 
          {/* <Sidebar />  */}
         <Routes>
+      {/* {isAdmin && ()} */}
           <Route exact path="/" element={<Home />} />
 
           <Route  path="/users" element={<UserList />} />
@@ -27,7 +29,7 @@ function App() {
           <Route  path="/products" element={<ProductList />} />
           <Route  path="/product/:productId" element={<Product />} />
           <Route  path="/newproduct" element={<NewProduct />} />
-          <Route  path="/login" element={<Login />} /> 
+          <Route  path="/login" element={ admin ? <Navigate to="/" /> : <Login />} /> 
 
         </Routes>
        </div> 
@@ -35,27 +37,6 @@ function App() {
   );
 }
 
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route exact path="/login" element={<Login />} />
 
-//         <Topbar />
-//         <div className="container">
-//           <Sidebar />
-//           <Route exact path="/" element={<Home />} />
-
-//           <Route exact path="/users" element={<UserList />} />
-//           <Route exact path="/user/:userId" element={<User />} />
-//           <Route exact path="/newUser" element={<NewUser />} />
-//           <Route exact path="/products" element={<ProductList />} />
-//           <Route exact path="/product/:productId" element={<Product />} />
-//           <Route exact path="/newproduct" element={<NewProduct />} />
-//         </div>
-//       </Routes>
-//     </Router>
-//   );
-// }
 
 export default App;

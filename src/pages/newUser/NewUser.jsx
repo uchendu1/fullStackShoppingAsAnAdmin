@@ -1,7 +1,11 @@
 import "./newUser.css";
+import Layout from "../../components/layout";
+
 
 export default function NewUser() {
   return (
+    <Layout>
+
     <div className="newUser">
       <h1 className="newUserTitle">New User</h1>
       <form className="newUserForm">
@@ -50,5 +54,7 @@ export default function NewUser() {
         <button className="newUserButton">Create</button>
       </form>
     </div>
+    </Layout>
+
   );
 }

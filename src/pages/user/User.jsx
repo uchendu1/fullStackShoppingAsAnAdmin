@@ -8,9 +8,12 @@ import {
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import "./user.css";
+import Layout from "../../components/layout";
 
 export default function User() {
   return (
+    <Layout>
+
     <div className="user">
       <div className="userTitleContainer">
         <h1 className="userTitle">Edit User</h1>
@@ -119,5 +122,7 @@ export default function User() {
         </div>
       </div>
     </div>
+    </Layout>
+
   );
 }

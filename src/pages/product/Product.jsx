@@ -3,9 +3,13 @@ import "./product.css";
 import Chart from "../../components/chart/Chart"
 import {productData} from "../../dummyData"
 import { Publish } from "@material-ui/icons";
+import Layout from "../../components/layout";
+
 
 export default function Product() {
   return (
+    <Layout>
+
     <div className="product">
       <div className="productTitleContainer">
         <h1 className="productTitle">Product</h1>
@@ -71,5 +75,6 @@ export default function Product() {
           </form>
       </div>
     </div>
+    </Layout>
   );
 }

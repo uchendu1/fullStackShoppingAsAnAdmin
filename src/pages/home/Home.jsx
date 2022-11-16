@@ -1,3 +1,4 @@
+import { useState, useEffect , useMemo} from "react";
 import Chart from "../../components/chart/Chart";
 import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
 import Layout from "../../components/layout";
@@ -7,6 +8,36 @@ import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 
 export default function Home() {
+  const [userStats, setUserStats] = useState([]);
+
+  const MONTHS = useMemo(() => [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ],
+  []
+  );
+
+  useEffect(()=> {
+const getStats = async ()=>{
+  try{
+
+  }catch{}
+}
+  }, [])
+  
+
+
+
   return (
     <Layout>
       <div className="home">

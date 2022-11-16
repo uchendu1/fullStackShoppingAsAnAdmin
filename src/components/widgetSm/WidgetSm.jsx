@@ -3,7 +3,7 @@ import "./widgetSm.css";
 import { Visibility } from "@material-ui/icons";
 import {userRequest, BASE_URL } from "../../requestMethods";
 
-export default function WidgetSm() {
+export default function WidgetSm() { 
   const [users, setUsers] = useState([]);
   useEffect(() => {
     const getUsers = async () => {
@@ -19,7 +19,7 @@ export default function WidgetSm() {
     <div className="widgetSm">
       <span className="widgetSmTitle">New Join Members</span>
       <ul className="widgetSmList">
-        {users.map((user) => (
+        {/* {users.map((user) => (
           <li className="widgetSmListItem" key={user._id}>
             <img
               src={
@@ -37,9 +37,9 @@ export default function WidgetSm() {
               Display
             </button>
           </li>
-        ))}
+        ))} */}
 
-        {/* <li className="widgetSmListItem">
+        <li className="widgetSmListItem">
           <img
             src= { users.img || "https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500" }
             alt=""
@@ -113,7 +113,7 @@ export default function WidgetSm() {
             <Visibility className="widgetSmIcon" />
             Display
           </button>
-        </li> */}
+        </li> 
       </ul>
     </div>
   );

@@ -5,27 +5,35 @@ import { userRequest, BASE_URL } from "../../requestMethods";
 
 export default function FeaturedInfo() {
   const [income, setIncome] = useState([]);
+  const [perc, setPerc] = useState(0);
 
   useEffect(()=> {
     const getIncome = async ()=>{
       try{
         const res = await userRequest.get(BASE_URL + "/orders/income")
         setIncome(res.data)
+        setPerc((res.data[1].total*100)/ res.data[0].total - 100);
       }catch{}
     }
     getIncome()
   }, [])
 
-  console.log(income, "income......")
+   console.log(income, "income......");
+   console.log(perc, "perc......");
+
   return (
     <div className="featured">
       <div className="featuredItem">
         <span className="featuredTitle">Revanue</span>
         <div className="featuredMoneyContainer">
-          <span className="featuredMoney">$2,415</span>
+          <span className="featuredMoney">{ perc || "$2,415"}</span>
           <span className="featuredMoneyRate">
-            -11.4 <ArrowDownward  className="featuredIcon negative"/>
-          </span>
+            %{Math.floor(perc) || "-11.4"} 
+            {" "} {perc < 0 ? (
+
+              <ArrowDownward  className="featuredIcon negative"/>
+            ) : <ArrowDownward className="featuredIcon negative"/> }
+          </span> 
         </div>
         <span className="featuredSub">Compared to last month</span>
       </div>

@@ -16,12 +16,9 @@ const admin =  JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user)
 
   return (
     <Router>
-      {/* <Topbar /> */}
        <div className="container"> 
-         {/* <Sidebar />  */}
         <Routes>
-      {/* {isAdmin && ()} */}
-          <Route exact path="/" element={<Home />} />
+          <Route  path="/" exact element={<Home />} />
 
           <Route  path="/users" element={<UserList />} />
           <Route  path="/user/:userId" element={<User />} />

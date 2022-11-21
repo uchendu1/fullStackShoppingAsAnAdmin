@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import {useSelector} from "react-redux";
 import "./product.css";
 import Chart from "../../components/chart/Chart"
 import {productData} from "../../dummyData"
@@ -7,6 +8,10 @@ import Layout from "../../components/layout";
 
 
 export default function Product() {
+    const location = useLocation();
+    const productId = location.pathname.split("/")[2];
+    const product = useSelector(state =>state.product.products.find((product) => product._id === productId));
+
   return (
     <Layout>
 
@@ -23,13 +28,12 @@ export default function Product() {
           </div>
           <div className="productTopRight">
               <div className="productInfoTop">
-                  <img src="https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="productInfoImg" />
-                  <span className="productName">Apple Airpods</span>
+                  <img src={ product.img || "https://images.pexels.com/photos/7156886/pexels-photo-7156886.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"} alt="" className="productInfoImg" />
+                  <span className="productName"> {product.title || "Apple Airpods"}</span>
               </div>
               <div className="productInfoBottom">
                   <div className="productInfoItem">
-                      <span className="productInfoKey">id:</span>
-                      <span className="productInfoValue">123</span>
+                      <span className="productInfoKey">{product._id || "id: 09887"}</span>
                   </div>
                   <div className="productInfoItem">
                       <span className="productInfoKey">sales:</span>
@@ -41,7 +45,7 @@ export default function Product() {
                   </div>
                   <div className="productInfoItem">
                       <span className="productInfoKey">in stock:</span>
-                      <span className="productInfoValue">no</span>
+                      <span className="productInfoValue">{product.InStock ||"no"}</span>
                   </div>
               </div>
           </div>

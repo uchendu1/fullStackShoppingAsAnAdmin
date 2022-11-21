@@ -13,7 +13,8 @@ export default function WidgetSm() {
       } catch {}
     };
     getUsers();
-  }, []); 
+  }, []);
+  console.log(users, "users........") 
 
   return (
     <div className="widgetSm">
@@ -41,7 +42,7 @@ export default function WidgetSm() {
 
         <li className="widgetSmListItem">
           <img
-            src= { users.img || "https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500" }
+            src=  "https://images.pexels.com/photos/3992656/pexels-photo-3992656.png?auto=compress&cs=tinysrgb&dpr=2&w=500" 
             alt=""
             className="widgetSmImg"
           />

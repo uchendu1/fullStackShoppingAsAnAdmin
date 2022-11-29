@@ -34,7 +34,7 @@ export default function Home() {
     const getStats = async () => {
       try {
         const res = await userRequest.get(BASE_URL + "/users/status");
-        res.data.pa((item) =>
+        res.data.map((item) =>
         setUserStats((prev) => [
 
           ...prev,
@@ -53,9 +53,8 @@ export default function Home() {
       <div className="home">
         <FeaturedInfo />
         <Chart
-    // data={userStats}
 
-          data={userData}
+          data={userData || userStats }
           title="User Analytics"
           grid
           dataKey="Active User"

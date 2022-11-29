@@ -16,6 +16,7 @@
     "react-scripts": "5.0.1",
     "recharts": "^2.1.16",
     "redux-persist": "^6.0.0",
+    "timeago": "^1.6.7",
     "timeago.js": "^4.0.2"
   },
   "scripts": {

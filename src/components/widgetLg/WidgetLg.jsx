@@ -38,12 +38,12 @@ export default function WidgetLg() {
           <tr className="widgetLgTr" key={order._id}>
             <td className="widgetLgUser">
               
-              <span className="widgetLgName">{order.userId}</span>
+              <span className="widgetLgName">{order.userId || "198377hg6"}</span>
             </td>
-            <td className="widgetLgDate">{format(order.createdAt)}</td>
-            <td className="widgetLgAmount">${order.amount}</td>
+            <td className="widgetLgDate">{format(order.createdAt) || "2 days ago"}</td>
+            <td className="widgetLgAmount">${order.amount || 78}</td>
             <td className="widgetLgStatus">
-              <Button type={order.status} />
+              <Button type={order.status || "approved"} />
             </td>
           </tr>
         ))} 

@@ -39,7 +39,7 @@ const productSlice = createSlice({
       state.error = true;
     },
   },
-});
+}); 
 
 export const {
   getProductStart,

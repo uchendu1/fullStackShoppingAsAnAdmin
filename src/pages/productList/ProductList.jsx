@@ -27,7 +27,7 @@ const handleDelete = (id) => {
   // };
 
   const columns = [
-    { field: "_id", headerName: "ID", width: 90 },
+    { field: "_id", headerName: "ID", width: 220 },
     {
       field: "product",
       headerName: "Product",
@@ -41,7 +41,7 @@ const handleDelete = (id) => {
         );
       },
     },
-    { field: "InStock", headerName: "Stock", width: 220 },
+    { field: "inStock", headerName: "Stock", width: 200 },
     {
       field: "status",
       headerName: "Status",

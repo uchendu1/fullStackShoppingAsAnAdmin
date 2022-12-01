@@ -24,13 +24,16 @@ export default function NewProduct() {
             <label>Price</label>
             <input type="text" placeholder="100" />
           </div>
-          
-          <select>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-          </select>
 
-          
+          <div className="addProductItem">
+            <label>Stock</label>
+
+            <select>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+
           <button className="addProductButton">Create</button>
         </form>
       </div>

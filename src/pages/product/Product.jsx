@@ -41,7 +41,10 @@ export default function Product() {
         const res = await userRequest.get(
           BASE_URL + "/orders/income?productId=" + productId
         );
-        res.data.map((item) =>
+        const list = res.data.sort((a, b) =>{
+            return a._id - b._id
+        })
+        list.map((item) =>
           setProductStart((prev) => [
             ...prev,
             { name: MONTHS[item._id - 1], sales: item.total },
@@ -51,7 +54,7 @@ export default function Product() {
         console.log(err);
       }
     };
-    getStats()
+    getStats();
   }, [MONTHS,productId ]);
 
 console.log(productStart, "productStart......")

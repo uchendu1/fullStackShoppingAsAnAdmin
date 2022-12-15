@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import {format} from "timeago.js";
-// import {format} from "timeago";
+//import {format} from "timeago.js";
+import {format} from "timeago";
 
 import "./widgetLg.css";
 import { userRequest, BASE_URL } from "../../requestMethods";
